@@ -95,8 +95,9 @@ var svg = d3.select("body").append("svg")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 svg.call(tip);
-debugger;
-d3.tsv("data.tsv", type, function(error, data) {
+d3.tsv("https://raw.githubusercontent.com/lorenegras/powerbi-gallery/master/histogram/data.tsv?token=AEE7CPMG6HC2YPGZYXCFT4DA63SMG", type, function(error, data) {
+  console.log(data);
+  
   x.domain(data.map(function(d) { return d.letter; }));
   y.domain([0, d3.max(data, function(d) { return d.frequency; })]);
 
